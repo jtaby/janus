@@ -151,3 +151,5 @@ let macvim_hig_shift_movement = 1
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+au BufEnter *.js set ft=sproutcore
