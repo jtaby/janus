@@ -48,6 +48,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Clear all trailing whitespace in current buffer
+map <C-x> :%s/\v\s+$//g<cr>:w<cr>
+
 " Status bar
 set laststatus=2
 
