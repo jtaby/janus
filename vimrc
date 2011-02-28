@@ -92,6 +92,8 @@ au FileType make                                     set noexpandtab
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
 
+au BufRead,BufNewFile,BufEnter *.js set ft=sproutcore.javascript
+
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
@@ -135,7 +137,7 @@ set modeline
 set modelines=10
 
 " Default color scheme
-color desert
+color rdark
 
 " Directories for swp files
 set backupdir=~/.vim/backup
@@ -151,5 +153,3 @@ let macvim_hig_shift_movement = 1
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
-
-au BufEnter *.js set ft=sproutcore
