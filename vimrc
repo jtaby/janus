@@ -139,9 +139,6 @@ let g:syntastic_quiet_warnings=1
 set modeline
 set modelines=10
 
-" Default color scheme
-color rdark
-
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
