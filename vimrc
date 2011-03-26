@@ -13,7 +13,6 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set list listchars=tab:\ \ ,trail:·
 
 " Searching
 set hlsearch
@@ -50,6 +49,11 @@ map <C-l> <C-w>l
 
 " Clear all trailing whitespace in current buffer
 map <C-x> :%s/\v\s+$//g<cr>:w<cr>
+
+" Be certain these two lines have no trailing spaces
+" Rehighlight visual block after left/right shift
+vnoremap < <gv
+vnoremap > >gv
 
 " Status bar
 set laststatus=2
@@ -148,6 +152,9 @@ let g:gist_open_browser_after_post = 1
 " Use modeline overrides
 set modeline
 set modelines=10
+
+" Default color scheme
+color rdark
 
 " Directories for swp files
 set backupdir=~/.vim/backup
