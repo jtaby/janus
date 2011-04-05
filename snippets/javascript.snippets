@@ -74,50 +74,57 @@ snippet gett
 	getElementBy${1:Id}('${2}')${3}
 # property
 snippet property
-/**
- ${1:Description}
-  
- @type ${2:TYPE}
-*/
+	/**
+	  ${4:Description}
+	   
+	  @type ${3:TYPE}
+	*/
+	${1:Name}: ${2:''},
 # computed property
 snippet computed
-/**
- ${1:Description}
- 
- @property
- @type ${2:TYPE}
-*/
+	/**
+	  ${2:Description}
+	  
+	  @property
+	  @type ${3:TYPE}
+	*/
+	${1:Name}: function(){
+
+	}.property().cacheable(),
 # method
 snippet method
-/**
- ${1:Description}
- 
- @param ${2:TYPE} ${3:NAME} ${4:DESCRIPTION} 
- @returns ${5:TYPE}
-*/
+	/**
+	  ${2:Description}
+	  
+	  @param ${3:TYPE} ${4:NAME} ${5:DESCRIPTION} 
+	  @returns ${6:TYPE}
+	*/
+	${1:Name}: function() {
+
+	},
 # param
 snippet param
-@param {${1:type}} ${2:name} ${3:description}
+	@param {${1:type}} ${2:name} ${3:description}
 # class
 snippet class
-/** @class
+	/** @class
 
-  ${1:DESCRIPTION}
+		${1:DESCRIPTION}
 
-  @author ${2:Majd Taby}
-  @extends SC.${3:CLASS}
-  @since SproutCore 1.5
-*/
+		@author ${2:Majd Taby}
+		@extends SC.${3:CLASS}
+		@since SproutCore 1.5
+	*/
 # file
 snippet file
-// ==========================================================================
-// Project: SproutCore
-// Copyright: ©2011 COMPANY.
-// ==========================================================================
-/*globals SC*/
+	// ==========================================================================
+	// Project: SproutCore
+	// Copyright: ©2011 COMPANY.
+	// ==========================================================================
+	/*globals SC*/
 # scope
 snippet scope
-/** @scope SC.${1:Name}.prototype */
+	/** @scope SC.${1:Name}.prototype */
 # returns
 snippet returns
-@returns {${1:type}} ${2:description}
+	@returns {${1:type}} ${2:description}
