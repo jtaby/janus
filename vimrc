@@ -33,6 +33,8 @@ let mapleader = ";"
 " Saves a shift when typing commands
 nnoremap ; :
 
+map <leader>l di{@link }<esc>P
+
 imap <C-t> <Esc>
 
 " Selection
