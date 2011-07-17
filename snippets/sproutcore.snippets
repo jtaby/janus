@@ -6,6 +6,33 @@ snippet license
 	// License:   Licensed under MIT license (see license.js)
 	// ==========================================================================
 
+# File template
+snippet file
+	// ==========================================================================
+	// Project:  SproutCore Runtime
+	// Copyright: ©2011 Strobe Inc. and contributors.
+	// License:   Licensed under MIT license (see license.js)
+	// ==========================================================================
+
+	/** 
+		@class
+		
+		@extends ${2:SC.Class}
+	*/
+	${1:App.Name} = ${2:SC.Class}.extend(
+	/** @scope ${1:App.Name}.prototype */{
+		init: function() {
+
+			return this._super();
+		},
+
+		destroy: function() {
+
+			return this._super();
+		}
+	});
+	
+
 # Class Template
 snippet class
 	/** 
@@ -36,12 +63,36 @@ snippet test
 
 # Get
 snippet get
-	get(this, '${1:key}')${2:;}
+	get(${1:this}, '${2:key}')
 
 # Set
 snippet set
-	set(this, '${1:key}')${2:;}
+	set(${1:this}, '${2:key}', '${3:value}')
 
 # log
 snippet log
 	console.log(${1:'key'})${2:;}
+
+# for
+snippet for
+	for (var i=0, l=${1:array}.length; i<l; i++) {
+		${2://Code}
+	}
+
+# property docs
+snippet property
+	/**
+		${1:Description}		
+
+		@default ${2:null}
+		@type ${3:Array}
+	*/
+
+# method docs
+snippet method
+	/**
+		${1:Description}		
+
+		@default ${2:null}
+		@return ${3:Type}
+	*/
