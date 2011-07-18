@@ -4,6 +4,39 @@ set number
 set ruler
 syntax on
 
+" Paste in insert mode
+set paste
+
+" Easier to hit leader setting
+let mapleader = ";"
+
+" Saves a shift when typing commands
+nnoremap ; :
+
+map <leader>l di{@link }<esc>P
+
+imap <C-t> <Esc>
+
+" Selection
+map <leader><space> :noh<cr>
+
+" Change current working directory to the one which the buffer is open in
+map <leader>d :cd %:p:h<cr>
+
+" Easy buffer navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Clear all trailing whitespace in current buffer
+map <C-x> :%s/\v\s+$//g<cr>:w<cr>
+
+" Be certain these two lines have no trailing spaces
+" Rehighlight visual block after left/right shift
+vnoremap < <gv
+vnoremap > >gv
+
 " Set encoding
 set encoding=utf-8
 
@@ -13,7 +46,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set list listchars=tab:\ \ ,trail:·
+"set list listchars=tab:\ \ ,trail:·
 
 " Searching
 set hlsearch
@@ -76,6 +109,8 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
+au BufRead,BufNewFile,BufEnter *.js set ft=sproutcore.javascript
+
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
@@ -125,7 +160,7 @@ set modeline
 set modelines=10
 
 " Default color scheme
-color desert
+color inkpot
 
 " Directories for swp files
 set backupdir=~/.vim/backup
